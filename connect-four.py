@@ -1,14 +1,7 @@
-import numpy as np
+mport numpy as np
 import pygame
 import sys
 import math
-
-f = open("game.txt","r")
-
-print(f.read())
-f = open("game2.txt", "w")
-f.write("Now the file has more content!")
-f.close()
 
 BLUE = (0,0,255)
 BLACK = (0,0,0)
@@ -153,3 +146,16 @@ while not game_over:
 
 			if game_over:
 				pygame.time.wait(3000)
+#exception handling with files
+try:
+	f = open("game.txt",'r')
+except FileNotFoundError as e:
+	print(e)
+except Exception as e:
+	print(e)
+else:
+	print(f.read())
+	f.close()
+finally:
+	print("Finally Executing,,,")
+
