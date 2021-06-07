@@ -1,0 +1,12 @@
+# except handling with files
+try:
+f = open("game.txt",'r')
+except FileNotFoundError as e:
+      ptint(e)
+except Exception as e:  
+      print(e)
+else:
+     print(f.read())
+     f.close()
+finally:
+     print("Finally Executing,,,")
