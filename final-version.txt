@@ -1,0 +1,20 @@
+# except handling with files
+try:
+f = open("game.txt",'r')
+except FileNotFoundError as e:
+      ptint(e)
+except Exception as e:  
+      print(e)
+else:
+     print(f.read())
+     f.close()
+finally:
+     print("Finally Executing,,,")
+
+
+OUTPUT:
+This is Connect four game.
+Sometime player 1 Win
+AND
+Sometime player 2 Win
+Finally Executing,,,
